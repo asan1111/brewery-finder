@@ -30,7 +30,7 @@ Load favorites from localStorage:
 - If no, initialize favorites array as empty
 
 Function renderBreweries(breweries):
-    Clear breweryContainer
+    
     For each brewery in breweries:
         Create breweryElement
         Set breweryElement content with brewery information
@@ -41,7 +41,23 @@ Function renderBreweries(breweries):
 
 Function toggleFavorite(breweryId):
     If breweryId is in favorites:
-        Remove breweryId from favorites
+        Give status by showing Remove breweryId from favorites
     Else:
-        Add breweryId to favorites
+        Show Add breweryId to favorites
     Update favorites in localStorage
+Function renderFavorites():
+    Clear favoritesList
+    For each favoriteId in favorites:
+        Get brewery details from allBreweries using favoriteId
+        Create favoriteItem with brewery details
+        Append favoriteItem to favoritesList
+        Add event listener to remove button:
+            - Toggle favorite status
+            - Update favorites list
+            - Update favorite button in breweryContainer
+
+Function fetchAndRenderAllBreweries():
+    Fetch all breweries from API
+    Parse response as JSON
+    Store all breweries in allBreweries
+    Render all breweries using renderBreweries()
