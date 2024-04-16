@@ -1,0 +1,136 @@
+/* Reset default margin and padding */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Body styles */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    color: #333;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+/* Header styles */
+.header {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+h1 {
+    font-size: 3rem;
+    margin-bottom: 10px;
+}
+
+form {
+    display: flex;
+    justify-content: center;
+}
+
+input[type="text"] {
+    padding: 10px;
+    width: 300px;
+    font-size: 1rem;
+}
+
+button {
+    padding: 10px 20px;
+    background-color: #007bff;
+    border: none;
+    color: #fff;
+    cursor: pointer;
+    font-size: 1rem;
+    transition: background-color 0.3s;
+}
+
+button:hover {
+    background-color: #0056b3;
+}
+
+/* Main content styles */
+.main-content {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 20px;
+    padding: 20px;
+}
+
+.brewery {
+    background-color: #fff;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+}
+
+.brewery h2 {
+    margin-bottom: 10px;
+    font-size: 1.5rem;
+}
+
+.brewery p {
+    margin-bottom: 5px;
+}
+
+.brewery a {
+    text-decoration: none;
+    color: #007bff;
+}
+
+.brewery a:hover {
+    text-decoration: underline;
+}
+
+/* Favorites Container */
+.favorites-container {
+    position: fixed;
+    top: 0;
+    right: 0;
+    width: 250px;
+    height: 100%;
+    background-color: #f9f9f9;
+    border-left: 1px solid #ddd;
+    padding: 20px;
+    box-shadow: -2px 0 4px rgba(0, 0, 0, 0.1);
+    overflow-y: auto;
+    z-index: 1000;
+    display: none;
+}
+
+.favorites-container.open {
+    display: block;
+}
+
+.favorites-header {
+    margin-bottom: 10px;
+    font-size: 1.5rem;
+    text-align: center;
+}
+
+.favorites-list {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+
+.favorites-list li {
+    padding: 10px;
+    border-bottom: 1px solid #ddd;
+}
+
+.favorites-list li:last-child {
+    border-bottom: none;
+}
+
+.favorites-list li a {
+    color: #007bff;
+    text-decoration: none;
+}
+
+.favorites-list li a:hover {
+    text-decoration: underline;
+}
